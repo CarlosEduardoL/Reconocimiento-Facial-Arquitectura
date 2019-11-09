@@ -17,9 +17,9 @@ class LBP:
             for j in range(1, self.image.shape[1] - 1):
                 temp = self.image[i - 1:i + 2, j - 1:j + 2]
                 self.lbp_image[i, j] = self.__evaluate(temp[1, 1],
-                                                        np.array(
-                                                            [temp[0, 1], temp[0, 0], temp[1, 0], temp[2, 0], temp[2, 1],
-                                                             temp[2, 2], temp[1, 2], temp[0, 2]]))
+                                                       np.array(
+                                                           [temp[0, 1], temp[0, 0], temp[1, 0], temp[2, 0], temp[2, 1],
+                                                            temp[2, 2], temp[1, 2], temp[0, 2]]))
 
     def __evaluate(self, num, neighbors: np.ndarray) -> np.uint8:
         return np.array(neighbors < num, dtype=np.int8).dot(self.__convert)
