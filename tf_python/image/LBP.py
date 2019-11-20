@@ -9,7 +9,9 @@ class LBP:
         self.image_route = image_route
         self.image = np.array(io.imread(image_route, as_gray=True) * 255, dtype=np.uint8)
         self.__convert = 1 << np.array([i for i in range(7, -1, -1)], dtype=np.uint8)
-        self.mask8_1 = np.array([[1, 2, 4], [128, 0, 8], [64, 32, 16]])
+        self.mask8_1 = np.array([[1, 2, 4],
+                                 [128, 0, 8],
+                                 [64, 32, 16]])
         self.mask8_2 = np.array([[1, 0, 2, 0, 4],
                                  [0, 0, 0, 0, 0],
                                  [128, 0, 0, 0, 8],
@@ -70,25 +72,38 @@ class LBP:
         return np.unique(lbp_image, return_counts=True)[1]
 
 
-lbp = LBP('../images/img1.png')
-lbp.lbp_image_his_8_1ij()
+for repetition in range(105):
+    with open('data'+str(repetition)+'.csv', 'a+')as file:
+        file.write('tamanho,algoritmo,localidad,tiempo\n')
+        file.flush()
+        for running in range(1, 5):
+            lbp = LBP('../images/level' + str(running) + '.png')
+            lbp.lbp_image_his_8_1ij()
 
-t = time.time()
-lbp.lbp_image_his_8_1ij()
-print('8_1 demoro:', time.time() - t)
-t = time.time()
-lbp.lbp_image_his_8_2ij()
-print('8_2 demoro:', time.time() - t)
-t = time.time()
-lbp.lbp_image_his_16_2ij()
-print('16_2 demoro:', time.time() - t)
+            t = time.time()
+            lbp.lbp_image_his_8_1ij()
+            file.write(str(running) + ',8_1,si,' + str(time.time() - t) + '\n')
+            file.flush()
+            t = time.time()
+            lbp.lbp_image_his_8_2ij()
+            file.write(str(running) + ',8_2,si,' + str(time.time() - t) + '\n')
+            file.flush()
+            t = time.time()
+            lbp.lbp_image_his_16_2ij()
+            file.write(str(running) + ',16_2,si,' + str(time.time() - t) + '\n')
+            file.flush()
 
-t = time.time()
-lbp.lbp_image_his_8_1ji()
-print('8_1 malo demoro:', time.time() - t)
-t = time.time()
-lbp.lbp_image_his_8_2ji()
-print('8_2 malo demoro:', time.time() - t)
-t = time.time()
-lbp.lbp_image_his_16_2ji()
-print('16_2 malo demoro:', time.time() - t)
+            t = time.time()
+            lbp.lbp_image_his_8_1ji()
+            file.write(str(running) + ',8_1,no,' + str(time.time() - t) + '\n')
+            file.flush()
+            t = time.time()
+            lbp.lbp_image_his_8_2ji()
+            file.write(str(running) + ',8_2,no,' + str(time.time() - t) + '\n')
+            file.flush()
+            t = time.time()
+            lbp.lbp_image_his_16_2ji()
+            file.write(str(running) + ',16_2,no,' + str(time.time() - t) + '\n')
+            file.flush()
+
+print('finalice')
