@@ -40,12 +40,12 @@ class LBP(private val image_route: String) {
                     intArrayOf(temp[0][1], temp[0][ 0], temp[1][ 0], temp[2][ 0],
                         temp[2][ 1],temp[2][2], temp[1][ 2], temp[0][2]))
                 lbpImage[i][j] = avg
-                bImage.setRGB(i,j,(avg shl 16) or (avg shl 8) or avg)
+                bImage.setRGB(i,j,(255 shl 24) or (avg shl 16) or (avg shl 8) or avg)
             }
         }
 
-        f = File("Output2.jpg")
-        ImageIO.write(bImage, "jpg", f)
+        f = File("Output2.png")
+        ImageIO.write(bImage, "png", f)
 
     }
 
