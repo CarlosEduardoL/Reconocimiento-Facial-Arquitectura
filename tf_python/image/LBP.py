@@ -72,8 +72,9 @@ class LBP:
         return np.unique(lbp_image, return_counts=True)[1]
 
 
+print('Staring')
 for repetition in range(105):
-    with open('data'+str(repetition)+'.csv', 'a+')as file:
+    with open('data' + str(repetition) + '.csv', 'a+')as file:
         file.write('tamanho,algoritmo,localidad,tiempo\n')
         file.flush()
         for running in range(1, 5):
@@ -105,5 +106,5 @@ for repetition in range(105):
             lbp.lbp_image_his_16_2ji()
             file.write(str(running) + ',16_2,no,' + str(time.time() - t) + '\n')
             file.flush()
-
+    print('running N°',repetition)
 print('finalice')

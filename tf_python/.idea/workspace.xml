@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e2854e4-996a-460c-9e7c-ab7fb9e7adb0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image/LBP.py" beforeDir="false" afterPath="$PROJECT_DIR$/image/LBP.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/img1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/img2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/img3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/img4.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
