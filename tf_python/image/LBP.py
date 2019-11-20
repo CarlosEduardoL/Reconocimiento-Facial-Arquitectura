@@ -1,6 +1,6 @@
 import numpy as np
 from skimage import io
-import matplotlib.pyplot as plt
+import time
 
 
 class LBP:
@@ -21,51 +21,74 @@ class LBP:
                                   [1 << 13, 0, 0, 0, 1 << 7],
                                   [1 << 12, 1 << 11, 1 << 10, 1 << 9, 1 << 8]])
 
-    def lbp_image_his_81ij(self):
+    def lbp_image_his_8_1ij(self):
         lbp_image = np.zeros((self.image.shape[0] - 2, self.image.shape[1] - 2), dtype=np.uint8)
         for i in range(2, self.image.shape[0] - 2):
             for j in range(2, self.image.shape[1] - 2):
                 temp = self.image[i - 1:i + 2, j - 1:j + 2]
                 lbp_image[i - 2, j - 2] = sum(sum(np.array(temp < temp[1, 1], dtype=np.int8) * self.mask8_1))
-        plt.imshow(lbp_image, cmap=plt.get_cmap('gray'), vmin=0, vmax=255)
         return np.unique(lbp_image, return_counts=True)[1]
 
-    def lbp_image_his_81ji(self):
+    def lbp_image_his_8_1ji(self):
         lbp_image = np.zeros((self.image.shape[0] - 2, self.image.shape[1] - 2), dtype=np.uint8)
         for j in range(2, self.image.shape[1] - 2):
             for i in range(2, self.image.shape[0] - 2):
                 temp = self.image[i - 1:i + 2, j - 1:j + 2]
                 lbp_image[i - 2, j - 2] = sum(sum(np.array(temp < temp[1, 1], dtype=np.int8) * self.mask8_1))
-        plt.imshow(lbp_image, cmap=plt.get_cmap('gray'), vmin=0, vmax=255)
         return np.unique(lbp_image, return_counts=True)[1]
 
-    def lbp_image_his_82ij(self):
+    def lbp_image_his_8_2ij(self):
         lbp_image = np.zeros((self.image.shape[0] - 2, self.image.shape[1] - 2), dtype=np.uint8)
         for i in range(2, self.image.shape[0] - 2):
             for j in range(2, self.image.shape[1] - 2):
                 temp = self.image[i - 2:i + 3, j - 2:j + 3]
                 lbp_image[i - 2, j - 2] = sum(sum(np.array(temp < temp[1, 1], dtype=np.int8) * self.mask8_2))
-        plt.imshow(lbp_image, cmap=plt.get_cmap('gray'), vmin=0, vmax=255)
         return np.unique(lbp_image, return_counts=True)[1]
 
-    def lbp_image_his_82ji(self):
+    def lbp_image_his_8_2ji(self):
         lbp_image = np.zeros((self.image.shape[0] - 1, self.image.shape[1] - 1), dtype=np.uint8)
         for j in range(2, self.image.shape[1] - 2):
             for i in range(2, self.image.shape[0] - 2):
                 temp = self.image[i - 2:i + 3, j - 2:j + 3]
                 lbp_image[i - 2, j - 2] = sum(sum(np.array(temp < temp[2, 2], dtype=np.int8) * self.mask8_2))
-        plt.imshow(lbp_image, cmap=plt.get_cmap('gray'), vmin=0, vmax=255)
+        return np.unique(lbp_image, return_counts=True)[1]
+
+    def lbp_image_his_16_2ij(self):
+        lbp_image = np.zeros((self.image.shape[0] - 2, self.image.shape[1] - 2), dtype=np.uint8)
+        for i in range(2, self.image.shape[0] - 2):
+            for j in range(2, self.image.shape[1] - 2):
+                temp = self.image[i - 2:i + 3, j - 2:j + 3]
+                lbp_image[i - 2, j - 2] = sum(sum(np.array(temp < temp[1, 1], dtype=np.int8) * self.mask16_2))
+        return np.unique(lbp_image, return_counts=True)[1]
+
+    def lbp_image_his_16_2ji(self):
+        lbp_image = np.zeros((self.image.shape[0] - 1, self.image.shape[1] - 1), dtype=np.uint16)
+        for j in range(2, self.image.shape[1] - 2):
+            for i in range(2, self.image.shape[0] - 2):
+                temp = self.image[i - 2:i + 3, j - 2:j + 3]
+                lbp_image[i - 2, j - 2] = sum(sum(np.array(temp < temp[2, 2], dtype=np.int16) * self.mask16_2))
         return np.unique(lbp_image, return_counts=True)[1]
 
 
-lbp = LBP('../images/img1.jpg')
-plt.figure(1)
-plt.imshow(lbp.image, cmap=plt.get_cmap('gray'), vmin=0, vmax=255)
-plt.title('Original Img')
-plt.figure(2)
-print(lbp.lbp_image_his_81ij())
-plt.title('lbp p=8 r=1 Img')
-plt.figure(3)
-print(lbp.lbp_image_his_82ij())
-plt.title('lbp p=8 r=2 Img')
-plt.show()
+lbp = LBP('../images/img1.png')
+lbp.lbp_image_his_8_1ij()
+
+t = time.time()
+lbp.lbp_image_his_8_1ij()
+print('8_1 demoro:', time.time() - t)
+t = time.time()
+lbp.lbp_image_his_8_2ij()
+print('8_2 demoro:', time.time() - t)
+t = time.time()
+lbp.lbp_image_his_16_2ij()
+print('16_2 demoro:', time.time() - t)
+
+t = time.time()
+lbp.lbp_image_his_8_1ji()
+print('8_1 malo demoro:', time.time() - t)
+t = time.time()
+lbp.lbp_image_his_8_2ji()
+print('8_2 malo demoro:', time.time() - t)
+t = time.time()
+lbp.lbp_image_his_16_2ji()
+print('16_2 malo demoro:', time.time() - t)
