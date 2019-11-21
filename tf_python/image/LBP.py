@@ -73,7 +73,7 @@ class LBP:
 
 
 print('Staring')
-for repetition in range(105):
+for repetition in range(73,105):
     with open('data' + str(repetition) + '.csv', 'a+')as file:
         file.write('tamanho,algoritmo,localidad,tiempo\n')
         file.flush()
