@@ -29,7 +29,7 @@ class LBP:
             for j in range(2, self.image.shape[1] - 2):
                 temp = self.image[i - 1:i + 2, j - 1:j + 2]
                 lbp_image[i - 2, j - 2] = sum(sum(np.array(temp < temp[1, 1], dtype=np.int8) * self.mask8_1))
-        return np.unique(lbp_image, return_counts=True)[1]
+        return lbp_image
 
     def lbp_image_his_8_1ji(self):
         lbp_image = np.zeros((self.image.shape[0] - 2, self.image.shape[1] - 2), dtype=np.uint8)
@@ -37,7 +37,7 @@ class LBP:
             for i in range(2, self.image.shape[0] - 2):
                 temp = self.image[i - 1:i + 2, j - 1:j + 2]
                 lbp_image[i - 2, j - 2] = sum(sum(np.array(temp < temp[1, 1], dtype=np.int8) * self.mask8_1))
-        return np.unique(lbp_image, return_counts=True)[1]
+        return lbp_image
 
     def lbp_image_his_8_2ij(self):
         lbp_image = np.zeros((self.image.shape[0] - 2, self.image.shape[1] - 2), dtype=np.uint8)
@@ -45,7 +45,7 @@ class LBP:
             for j in range(2, self.image.shape[1] - 2):
                 temp = self.image[i - 2:i + 3, j - 2:j + 3]
                 lbp_image[i - 2, j - 2] = sum(sum(np.array(temp < temp[1, 1], dtype=np.int8) * self.mask8_2))
-        return np.unique(lbp_image, return_counts=True)[1]
+        return lbp_image
 
     def lbp_image_his_8_2ji(self):
         lbp_image = np.zeros((self.image.shape[0] - 1, self.image.shape[1] - 1), dtype=np.uint8)
@@ -53,7 +53,7 @@ class LBP:
             for i in range(2, self.image.shape[0] - 2):
                 temp = self.image[i - 2:i + 3, j - 2:j + 3]
                 lbp_image[i - 2, j - 2] = sum(sum(np.array(temp < temp[2, 2], dtype=np.int8) * self.mask8_2))
-        return np.unique(lbp_image, return_counts=True)[1]
+        return lbp_image
 
     def lbp_image_his_16_2ij(self):
         lbp_image = np.zeros((self.image.shape[0] - 2, self.image.shape[1] - 2), dtype=np.uint8)
@@ -61,7 +61,7 @@ class LBP:
             for j in range(2, self.image.shape[1] - 2):
                 temp = self.image[i - 2:i + 3, j - 2:j + 3]
                 lbp_image[i - 2, j - 2] = sum(sum(np.array(temp < temp[1, 1], dtype=np.int8) * self.mask16_2))
-        return np.unique(lbp_image, return_counts=True)[1]
+        return lbp_image
 
     def lbp_image_his_16_2ji(self):
         lbp_image = np.zeros((self.image.shape[0] - 1, self.image.shape[1] - 1), dtype=np.uint16)
@@ -69,42 +69,9 @@ class LBP:
             for i in range(2, self.image.shape[0] - 2):
                 temp = self.image[i - 2:i + 3, j - 2:j + 3]
                 lbp_image[i - 2, j - 2] = sum(sum(np.array(temp < temp[2, 2], dtype=np.int16) * self.mask16_2))
+        return lbp_image
+
+    @staticmethod
+    def make_global_histogram(lbp_image: np.ndarray):
         return np.unique(lbp_image, return_counts=True)[1]
 
-
-print('Staring')
-for repetition in range(73,105):
-    with open('data' + str(repetition) + '.csv', 'a+')as file:
-        file.write('tamanho,algoritmo,localidad,tiempo\n')
-        file.flush()
-        for running in range(1, 5):
-            lbp = LBP('../images/level' + str(running) + '.png')
-            lbp.lbp_image_his_8_1ij()
-
-            t = time.time()
-            lbp.lbp_image_his_8_1ij()
-            file.write(str(running) + ',8_1,si,' + str(time.time() - t) + '\n')
-            file.flush()
-            t = time.time()
-            lbp.lbp_image_his_8_2ij()
-            file.write(str(running) + ',8_2,si,' + str(time.time() - t) + '\n')
-            file.flush()
-            t = time.time()
-            lbp.lbp_image_his_16_2ij()
-            file.write(str(running) + ',16_2,si,' + str(time.time() - t) + '\n')
-            file.flush()
-
-            t = time.time()
-            lbp.lbp_image_his_8_1ji()
-            file.write(str(running) + ',8_1,no,' + str(time.time() - t) + '\n')
-            file.flush()
-            t = time.time()
-            lbp.lbp_image_his_8_2ji()
-            file.write(str(running) + ',8_2,no,' + str(time.time() - t) + '\n')
-            file.flush()
-            t = time.time()
-            lbp.lbp_image_his_16_2ji()
-            file.write(str(running) + ',16_2,no,' + str(time.time() - t) + '\n')
-            file.flush()
-    print('running N°',repetition)
-print('finalice')

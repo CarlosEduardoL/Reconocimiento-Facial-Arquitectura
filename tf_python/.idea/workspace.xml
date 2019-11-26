@@ -2,7 +2,118 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e2854e4-996a-460c-9e7c-ab7fb9e7adb0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/image/experiment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image/LBP.py" beforeDir="false" afterPath="$PROJECT_DIR$/image/LBP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/image/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data0.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data10.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data101.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data102.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data103.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data104.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data11.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data12.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data13.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data14.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data15.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data16.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data17.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data18.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data19.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data20.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data21.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data22.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data23.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data24.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data25.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data26.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data27.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data28.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data29.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data30.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data32.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data33.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data34.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data35.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data36.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data37.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data38.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data39.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data40.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data41.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data42.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data43.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data44.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data45.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data46.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data47.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data48.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data49.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data51.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data52.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data53.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data54.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data55.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data56.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data57.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data58.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data59.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data6.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data60.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data61.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data62.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data63.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data64.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data65.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data66.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data67.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data68.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data69.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data7.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data70.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data71.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data72.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data73.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data74.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data75.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data76.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data77.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data78.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data79.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data8.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data80.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data81.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data82.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data83.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data84.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data85.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data86.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data87.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data88.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data89.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data90.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data91.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data92.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data93.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data94.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data95.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data96.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data97.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data98.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data99.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data_final.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/data_final1.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/datos_finales.xlsx" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +154,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.data">
     <configuration name="LBP" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="tf_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -65,8 +176,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="tf_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/image" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/image/data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.data" />
         <item itemvalue="Python.LBP" />
       </list>
     </recent_temporary>
