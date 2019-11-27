@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e2854e4-996a-460c-9e7c-ab7fb9e7adb0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/image/LBP.py" beforeDir="false" afterPath="$PROJECT_DIR$/image/LBP.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/experiment.py" beforeDir="false" afterPath="$PROJECT_DIR$/image/experiment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574864438817</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="programa arreglado v3">
+      <created>1574865105542</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574865105542</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,6 +179,7 @@
     <MESSAGE value="datos normalizados" />
     <MESSAGE value="programa arreglado" />
     <MESSAGE value="programa arreglado v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="programa arreglado v2" />
+    <MESSAGE value="programa arreglado v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="programa arreglado v3" />
   </component>
 </project>
