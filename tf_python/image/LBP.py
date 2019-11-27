@@ -1,7 +1,6 @@
 import numpy as np
 from skimage import io
 
-
 class LBP:
 
     def __init__(self, image_route):
