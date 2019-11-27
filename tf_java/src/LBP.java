@@ -168,7 +168,7 @@ public class LBP {
             PrintWriter out = new PrintWriter(bw))
         {
             out.println("replica,tamanho,algoritmo,localidad,tiempo");
-            for (int replica = 0; replica < 1000; replica++) {
+            for (int replica = 0; replica <= 80000; replica++) {
                 for (int nivel = 1; nivel < 5; nivel++) {
                     String run_str = replica + "," + nivel;
                     LBP lbp = new LBP("images/level"+nivel+".png");
