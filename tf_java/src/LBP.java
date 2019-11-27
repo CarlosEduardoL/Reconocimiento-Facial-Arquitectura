@@ -16,7 +16,7 @@ public class LBP {
         width = bImage.getWidth();
         height = bImage.getHeight();
         image = new short[width][height];
-        lbpImage = new short[width-2][height-2];
+        lbpImage = new short[width-4][height-4];
 
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
@@ -168,7 +168,7 @@ public class LBP {
             PrintWriter out = new PrintWriter(bw))
         {
             out.println("replica,tamanho,algoritmo,localidad,tiempo");
-            for (int replica = 0; replica < 105; replica++) {
+            for (int replica = 0; replica < 1000; replica++) {
                 for (int nivel = 1; nivel < 5; nivel++) {
                     String run_str = replica + "," + nivel;
                     LBP lbp = new LBP("images/level"+nivel+".png");
