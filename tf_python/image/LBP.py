@@ -1,6 +1,5 @@
 import numpy as np
 from skimage import io
-import time
 
 
 class LBP:
