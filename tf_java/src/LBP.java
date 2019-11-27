@@ -1,6 +1,8 @@
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class LBP {
 
@@ -168,33 +170,39 @@ public class LBP {
             PrintWriter out = new PrintWriter(bw))
         {
             out.println("replica,tamanho,algoritmo,localidad,tiempo");
-            for (int replica = 0; replica <= 80000; replica++) {
-                for (int nivel = 1; nivel < 5; nivel++) {
+            ArrayList<Integer> levels = new ArrayList<>();
+            levels.add(0);levels.add(1);levels.add(2);levels.add(3);levels.add(4);
+            for (int replica = 0; replica <= 100; replica++) {
+                Collections.shuffle(levels);
+                for (int nivel: levels) {
                     String run_str = replica + "," + nivel;
-                    LBP lbp = new LBP("images/level"+nivel+".png");
-                    lbp.LBPImage_8_1_local();
 
+                    LBP lbp = new LBP("images/level"+nivel+".png");
                     long t = System.nanoTime();
                     lbp.LBPImage_8_1_local();
                     out.println(run_str + ",8_1,si," + (System.nanoTime() - t) );
-                    
+
+                    lbp = new LBP("images/level"+nivel+".png");
                     t = System.nanoTime();
-                    lbp.LBPImage_8_1_noLocal();
+                    lbp.LBPImage_8_2_local();
                     out.println(run_str + ",8_2,si," + (System.nanoTime() - t) );
-                    
+
+                    lbp = new LBP("images/level"+nivel+".png");
                     t = System.nanoTime();
                     lbp.LBPImage_16_2_local();
                     out.println(run_str + ",16_2,si," + (System.nanoTime() - t) );
-                    
 
+                    lbp = new LBP("images/level"+nivel+".png");
                     t = System.nanoTime();
                     lbp.LBPImage_8_1_noLocal();
                     out.println(run_str + ",8_1,no," + (System.nanoTime() - t) );
-                    
+
+                    lbp = new LBP("images/level"+nivel+".png");
                     t = System.nanoTime();
                     lbp.LBPImage_8_2_noLocal();
                     out.println(run_str + ",8_2,no," + (System.nanoTime() - t) );
-                    
+
+                    lbp = new LBP("images/level"+nivel+".png");
                     t = System.nanoTime();
                     lbp.LBPImage_16_2_noLocal();
                     out.println(run_str + ",16_2,no," + (System.nanoTime() - t));
