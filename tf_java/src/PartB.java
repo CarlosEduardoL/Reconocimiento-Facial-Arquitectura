@@ -24,20 +24,20 @@ public class PartB {
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter out = new PrintWriter(bw))
         {
-            out.println("Tipo de algoritmo,Grupo,Sub grupo,Grupo Respuesta,Sub grupo respuesta,distancia chi");
+            out.println("Tipo de algoritmo,Data set,Test set,Distancia chi square");
             Model[] samples = new Model[]{new Model("Nelson","test_set/0.jpeg",0),
                                             new Model("Carlos","test_set/1.jpg",0),
                                             new Model("Santiago","test_set/2.jpeg",0),
                                             new Model("Nicolas","test_set/3.jpg",0) };
             for (Model face: samples) {
                 String answer = detector.DetectLBP8_1(face);
-                out.println("8_1,"+face.getTag()+","+face.getSubTag()+","+answer);
+                out.println("8_1,"+face.getTag()+","+answer);
 
                 answer = detector.DetectLBP8_2(face);
-                out.println("8_2,"+face.getTag()+","+face.getSubTag()+","+answer);
+                out.println("8_2,"+face.getTag()+","+answer);
 
                 answer = detector.DetectLBP16_2(face);
-                out.println("16_2,"+face.getTag()+","+face.getSubTag()+","+answer);
+                out.println("16_2,"+face.getTag()+","+answer);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -72,7 +72,7 @@ class Detector {
             pesos[i] = chiSquare(models.get(i).getHist8_1(),vectorFace);
             if (pesos[i] < pesos[min]) min = i;
         }
-        return models.get(min).getTag()+","+models.get(min).getSubTag()+","+pesos[min];
+        return models.get(min).getTag()+","+pesos[min];
     }
 
     String DetectLBP8_2(Model face){
@@ -84,7 +84,7 @@ class Detector {
             pesos[i] = chiSquare(models.get(i).getHist8_2(),vectorFace);
             if (pesos[i] < pesos[min]) min = i;
         }
-        return models.get(min).getTag()+","+models.get(min).getSubTag()+","+pesos[min];
+        return models.get(min).getTag()+","+pesos[min];
     }
 
     String DetectLBP16_2(Model face){
@@ -97,7 +97,7 @@ class Detector {
             if (pesos[i] < pesos[min]) min = i;
             
         }
-        return models.get(min).getTag()+","+models.get(min).getSubTag()+","+pesos[min];
+        return models.get(min).getTag()+","+pesos[min];
     }
 
     private double chiSquare(double[] x, double[] y){
