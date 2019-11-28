@@ -2,6 +2,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class LBP {
@@ -162,7 +163,66 @@ public class LBP {
         return lbpImage;
     }
 
+    public static double[] lbpHistogram8_1y2(short[][] lbpImage){
+        double[] lbpHistogram = new double[256 * 16];
+        int width = lbpImage.length/4;
+        int height = lbpImage[0].length/4;
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                lbpHistogram[lbpImage[i][j]]++;
+                lbpHistogram[256 + lbpImage[i + width][j]]++;
+                lbpHistogram[256 * 2 + lbpImage[i + 2 * width][j]]++;
+                lbpHistogram[256 * 3 + lbpImage[i + 3 * width][j]]++;
 
+                lbpHistogram[256 * 4 + lbpImage[i][j + height]]++;
+                lbpHistogram[256 * 5 + lbpImage[i + width][j + height]]++;
+                lbpHistogram[256 * 6 + lbpImage[i + 2 * width][j + height]]++;
+                lbpHistogram[256 * 7 + lbpImage[i + 3 * width][j + height]]++;
+
+                lbpHistogram[256 * 8 + lbpImage[i][j + 2 * height]]++;
+                lbpHistogram[256 * 9 + lbpImage[i + width][j + 2 * height]]++;
+                lbpHistogram[256 * 10 + lbpImage[i + 2 * width][j + 2 * height]]++;
+                lbpHistogram[256 * 11 + lbpImage[i + 3 * width][j + 2 * height]]++;
+                
+                lbpHistogram[256 * 12 + lbpImage[i][j + 3 * height]]++;
+                lbpHistogram[256 * 13 + lbpImage[i + width][j + 3 * height]]++;
+                lbpHistogram[256 * 14 + lbpImage[i + 2 * width][j + 3 * height]]++;
+                lbpHistogram[256 * 15 + lbpImage[i + 3 * width][j + 3 * height]]++;
+            }
+        }
+        return Arrays.stream(lbpHistogram).map(i -> i/(width * height)).toArray();
+    }
+
+    public static double[] lbpHistogram16_2(short[][] lbpImage){
+        int max = (1<<16);
+        double[] lbpHistogram = new double[max * 16];
+        int width = lbpImage.length/4;
+        int height = lbpImage[0].length/4;
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                lbpHistogram[(int)(char)lbpImage[i][j]]++;
+                lbpHistogram[max + (int)(char)lbpImage[i + width][j]]++;
+                lbpHistogram[max * 2 + (int)(char)lbpImage[i + 2 * width][j]]++;
+                lbpHistogram[max * 3 + (int)(char)lbpImage[i + 3 * width][j]]++;
+
+                lbpHistogram[max * 4 + (int)(char)lbpImage[i][j + height]]++;
+                lbpHistogram[max * 5 + (int)(char)lbpImage[i + width][j + height]]++;
+                lbpHistogram[max * 6 + (int)(char)lbpImage[i + 2 * width][j + height]]++;
+                lbpHistogram[max * 7 + (int)(char)lbpImage[i + 3 * width][j + height]]++;
+
+                lbpHistogram[max * 8 + (int)(char)lbpImage[i][j + 2 * height]]++;
+                lbpHistogram[max * 9 + (int)(char)lbpImage[i + width][j + 2 * height]]++;
+                lbpHistogram[max * 10 + (int)(char)lbpImage[i + 2 * width][j + 2 * height]]++;
+                lbpHistogram[max * 11 + (int)(char)lbpImage[i + 3 * width][j + 2 * height]]++;
+
+                lbpHistogram[max * 12 + (int)(char)lbpImage[i][j + 3 * height]]++;
+                lbpHistogram[max * 13 + (int)(char)lbpImage[i + width][j + 3 * height]]++;
+                lbpHistogram[max * 14 + (int)(char)lbpImage[i + 2 * width][j + 3 * height]]++;
+                lbpHistogram[max * 15 + (int)(char)lbpImage[i + 3 * width][j + 3 * height]]++;
+            }
+        }
+        return Arrays.stream(lbpHistogram).map(i -> i/(width * height)).toArray();
+    }
 
     public static void main(String[] args) {
         try(FileWriter fw = new FileWriter("data.csv", true);
